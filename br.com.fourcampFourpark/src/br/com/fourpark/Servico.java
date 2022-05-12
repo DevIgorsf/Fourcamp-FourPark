@@ -19,8 +19,8 @@ public class Servico {
 		Servico.valorHora = novoValor;
 	}
 
-	public Double getFaturamento() {
-		return Servico.faturamento;
+	public string getFaturamento() {
+		return String.format("%.2f", Servico.faturamento);
 	}
 	
 	public static void addLogVeiculo(Vaga vaga) {
@@ -42,7 +42,7 @@ public class Servico {
 		return Servico.getLogVeiculo();
 	}
 	
-	public static Double calcularValorPagar(String horarioEntrada, String horarioSaida) {	
+	public static String calcularValorPagar(String horarioEntrada, String horarioSaida) {	
 		Double horasEntrada = Double.parseDouble(horarioEntrada.replace(':','.'));
 		Double horasSaida =  Double.parseDouble(horarioSaida.replace(':','.'));
 		Double horas = (horasSaida - horasEntrada);
@@ -52,7 +52,7 @@ public class Servico {
 		
 		Double faturadoPorHora = horas * (Servico.getValorHora());
 		Servico.faturamento += faturadoPorHora;
-		return faturadoPorHora;
+		return String.format("%.2f", faturadoPorHora);
 	}
 
 	public String listarVagasDisponiveis(Vaga[] vaga) {
