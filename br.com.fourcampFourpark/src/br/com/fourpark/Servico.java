@@ -48,7 +48,6 @@ public class Servico {
 		Double horas = (horasSaida - horasEntrada);
 		horas -= ((horasSaida%1) - (horasEntrada%1));
 		horas += ((horasSaida%1) - (horasEntrada%1))/0.60;
-//		horas = (double) Math.round((horas)*100.0/100.0);
 		
 		Double faturadoPorHora =  horas * Servico.getValorHora();
 		Servico.faturamento += faturadoPorHora;
