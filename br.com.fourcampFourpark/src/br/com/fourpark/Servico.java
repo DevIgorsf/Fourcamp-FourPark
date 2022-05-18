@@ -19,7 +19,7 @@ public class Servico {
 		Servico.valorHora = novoValor;
 	}
 
-	public string getFaturamento() {
+	public String getFaturamento() {
 		return String.format("%.2f", Servico.faturamento);
 	}
 	
